@@ -1,0 +1,70 @@
+{
+  "chickenAppetizers": [
+    { "name": "Chicken 65", "description": "A spicy, fried chicken appetizer with South Indian spices.", "price": 15.99, "spiceLevels": ["Mild", "Medium", "Spicy"] },
+    { "name": "Chicken Lollipops", "description": "Chicken wings and legs deep fried and sauteed with Bawarchi special sauce.", "price": 15.99 },
+    { "name": "Chicken Manchurian", "description": "Fried chicken pieces mixed with a savory Manchurian sauce.", "price": 15.99, "spiceLevels": ["Mild", "Medium", "Spicy"] },
+    { "name": "Chicken Pakora", "description": "Chicken pieces coated in batter along with spices and fried.", "price": 15.99 },
+    { "name": "Chicken Sukka Varuval", "description": "Pan-fried boneless chicken sautéed with South Indian spices.", "price": 17.99 },
+    { "name": "Chilli Chicken", "description": "Fried chicken stir-fried with bell peppers in chilli sauce.", "price": 15.99 },
+    { "name": "Ginger Chicken", "description": "Marinated fried chicken pieces sautéed in a zesty ginger sauce.", "price": 15.99 },
+    { "name": "Pepper Chicken", "description": "Fried chicken sautéed with black pepper and bell peppers.", "price": 15.99 },
+    { "name": "Chicken Fry (Vepudu)", "description": "Spicy South Indian dry chicken dish.", "price": 17.99 },
+    { "name": "Chicken Liver Fry", "description": "Dry spiced chicken liver dish.", "price": { "small": 13.99, "large": 23.99 } }
+  ],
+  "goatLambAppetizers": [
+    { "name": "Mutton Vepudu", "price": 22.99 },
+    { "name": "Pepper Mutton Roast", "price": 22.99 },
+    { "name": "Mutton Sukka Varuval", "price": 22.99 },
+    { "name": "Velluli Karam Mutton", "price": 22.99 }
+  ],
+  "seafoodAppetizers": [
+    { "name": "Apollo Fish", "price": 18.99 },
+    { "name": "Chilli Fish", "price": 18.99 },
+    { "name": "Chilli Shrimp", "price": 19.99 },
+    { "name": "Ginger Fish", "price": 18.99 },
+    { "name": "Pepper Shrimp Fry", "price": 19.99 },
+    { "name": "Pepper Shrimp Roast", "price": 22.99 }
+  ],
+  "eggAppetizers": [
+    { "name": "Egg Bajji", "description": "Fried battered boiled eggs (6 pieces).", "price": 12.99 },
+    { "name": "Egg Omelette", "description": "Masala omelette with onions, chilies, and spices.", "price": 11.99 }
+  ],
+  "tandoori": [
+    { "name": "Achari Chicken Tikka", "price": 18.99 },
+    { "name": "Bone In Chicken Tandoor", "price": 18.99 },
+    { "name": "Boneless Chicken Tandoor", "price": 18.99 },
+    { "name": "Hariyali Chicken Tandoor", "price": 19.99 }
+  ],
+  "chickenEntrees": [
+    { "name": "Chicken Curry", "price": 21.99 },
+    { "name": "Butter Chicken", "price": 16.99 },
+    { "name": "Chicken Korma", "price": 16.99 },
+    { "name": "Chicken Saag", "price": 16.99 },
+    { "name": "Chicken Tikka Masala", "price": 16.99 },
+    { "name": "Chicken Vindaloo", "price": 16.99 },
+    { "name": "Gongura Chicken Curry", "price": 18.99 },
+    { "name": "Kadai Chicken", "price": 16.99 }
+  ],
+  "goatLambEntrees": [
+    { "name": "Goat Curry", "price": 20.99 },
+    { "name": "Goat Vindaloo", "price": 21.99 },
+    { "name": "Gongura Mutton Curry", "price": 25.99 },
+    { "name": "Keema Curry", "price": 20.99 },
+    { "name": "Lamb Curry", "price": 23.99 },
+    { "name": "Lamb Korma", "price": 20.99 },
+    { "name": "Lamb Saag", "price": 23.99 },
+    { "name": "Lamb Vindaloo", "price": 23.99 }
+  ],
+  "seafoodEntrees": [
+    { "name": "Shrimp Curry", "price": 20.99 },
+    { "name": "Shrimp Tikka Masala", "price": 20.99 }
+  ],
+  "biryani": [
+    { "name": "Avakaya Chicken Biryani", "price": 20.99 },
+    { "name": "Hyderabad Chicken Dum Biryani", "price": 17.99 },
+    { "name": "Gongura Chicken Biryani", "price": 21.99 },
+    { "name": "Mutton Biryani", "price": 25.99 },
+    { "name": "Shrimp Biryani", "price": 22.99 },
+    { "name": "Keema Biryani", "price": 22.99 }
+  ]
+}

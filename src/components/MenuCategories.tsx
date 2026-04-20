@@ -1,0 +1,102 @@
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const categories = [
+  {
+    id: 'veg',
+    label: 'Vegetarian',
+    tag: 'Pure & Fresh',
+    image: '/photos/veg.jpg',
+    route: '/menu/veg',
+  },
+  {
+    id: 'non-veg',
+    label: 'Non-Veg',
+    tag: 'Rich & Smoky',
+    image: '/photos/non-veg.jpg',
+    route: '/menu/non-veg',
+  },
+  {
+    id: 'desserts',
+    label: 'Desserts',
+    tag: 'Royal Sweets',
+    image: '/photos/dessert.jpg',
+    route: '/menu/desserts',
+  },
+  {
+    id: 'drinks',
+    label: 'Drinks',
+    tag: 'Crafted Sips',
+    image: '/photos/drinks.jpg',
+    route: '/menu/drinks',
+  },
+];
+
+export default function MenuCategories() {
+  const navigate = useNavigate();
+
+  return (
+    <section id="menu" data-scroll className="relative overflow-hidden px-6 py-24 sm:px-10">
+      <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-[#200000] to-transparent opacity-30" />
+      <div className="relative mx-auto max-w-7xl">
+
+        {/* Section heading */}
+        <div className="mb-14">
+          <p className="text-sm uppercase tracking-[0.35em] text-gold/75">Explore our menu</p>
+          <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+            Crafted for every craving.
+          </h2>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {categories.map((cat, i) => (
+            <motion.div
+              key={cat.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ scale: 1.03 }}
+              onClick={() => { window.scrollTo({ top: 0 }); navigate(cat.route); }}
+              className="group relative cursor-pointer overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-gold/50 hover:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
+              style={{ minHeight: '380px' }}
+            >
+              {/* Background image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style={{ backgroundImage: `url(${cat.image})` }}
+              />
+
+              {/* Dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
+
+              {/* Gold glow ring on hover */}
+              <div className="absolute inset-0 rounded-[2rem] opacity-0 ring-1 ring-gold/40 transition-opacity duration-300 group-hover:opacity-100" />
+
+              {/* Top tag badge */}
+              <div className="absolute left-5 top-5">
+                <span className="rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-white/60 backdrop-blur-sm">
+                  {cat.tag}
+                </span>
+              </div>
+
+              {/* Bottom content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-semibold text-white">{cat.label}</h3>
+                <div className="mt-3 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-gold transition-all duration-300 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0">
+                  <span>Explore</span>
+                  <svg
+                    className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
