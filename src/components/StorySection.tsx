@@ -32,7 +32,7 @@ export default function StorySection() {
 
           {/* Text */}
           <div className="flex-1">
-            <p className="text-sm uppercase tracking-[0.35em] text-gold/75">Our story</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-gold">Our story</p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
               Where authentic flavors<br />meet modern dining.
             </h2>

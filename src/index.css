@@ -5,6 +5,7 @@
 :root {
   color-scheme: dark;
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #0f0f0f;
 }
@@ -43,4 +44,19 @@ section {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Accordion scrollbar */
+.max-h-\[400px\]::-webkit-scrollbar {
+  width: 4px;
+}
+.max-h-\[400px\]::-webkit-scrollbar-track {
+  background: transparent;
+}
+.max-h-\[400px\]::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 999px;
+}
+.max-h-\[400px\]::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
 }

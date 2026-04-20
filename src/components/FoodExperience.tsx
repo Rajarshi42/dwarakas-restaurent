@@ -1,86 +1,76 @@
 import { motion } from 'framer-motion';
-
-const VIDEO_SRC =
-  '/videos/Firefly Ultra realistic cinematic slow-motion video of chicken biryani preparation, 4K resolution, 6.mp4';
+import { GiCookingPot } from 'react-icons/gi';
+import { MdOutlineEco, MdOutlineDinnerDining, MdOutlineCelebration } from 'react-icons/md';
 
 const highlights = [
-  { icon: '🍛', text: 'Signature biryanis & rich curries' },
-  { icon: '🌿', text: 'Fresh ingredients, traditional recipes' },
-  { icon: '🏡', text: 'Warm, welcoming dining experience' },
-  { icon: '🎉', text: 'Catering for weddings, parties & corporate events' },
+  { Icon: GiCookingPot, text: 'Signature biryanis & rich curries' },
+  { Icon: MdOutlineEco, text: 'Fresh ingredients, traditional recipes' },
+  { Icon: MdOutlineDinnerDining, text: 'Warm, welcoming dining experience' },
+  { Icon: MdOutlineCelebration, text: 'Catering for weddings, parties & corporate events' },
 ];
 
 export default function FoodExperience() {
   return (
     <section id="food" data-scroll className="relative overflow-hidden px-6 py-24 sm:px-10">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.04),_transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.07),_transparent_60%)]" />
 
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 lg:flex-row lg:items-center lg:gap-20">
+      <div className="relative mx-auto max-w-4xl">
 
-        {/* ── Visual (dominant) ── */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-[2.5rem] border border-white/10 shadow-card lg:flex-[1.2]"
+        {/* Label */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-sm uppercase tracking-[0.35em] text-gold"
         >
-          <video
-            src={VIDEO_SRC}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-[460px] w-full object-cover lg:h-[560px]"
-          />
-          {/* gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-          {/* overlay text */}
-          <div className="absolute inset-x-0 bottom-0 p-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold/70">In our kitchen</p>
-            <h3 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">
-              Crafted with spice.<br />Served with soul.
-            </h3>
-          </div>
-        </motion.div>
+          Food experience
+        </motion.p>
 
-        {/* ── Text ── */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}
-          className="flex flex-col gap-8 lg:flex-1"
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.08 }}
+          className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl"
         >
-          <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-gold/75">Food experience</p>
-            <h2 className="mt-4 max-w-md text-3xl font-semibold leading-tight sm:text-4xl">
-              More than a meal — it's an experience of flavor, tradition, and warmth.
-            </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/55">
-              At Dwaraka's Bawarchi, every dish is crafted with authentic recipes, bold spices, and fresh ingredients — bringing true Indian flavors to your table.
-            </p>
-          </div>
+          More than a meal —<br />
+          <span className="text-gold">it's an experience.</span>
+        </motion.h2>
 
-          {/* Highlights */}
-          <ul className="flex flex-col gap-3">
-            {highlights.map((h, i) => (
-              <motion.li
-                key={h.text}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3"
-              >
-                <span className="text-lg">{h.icon}</span>
-                <span className="text-sm text-white/70">{h.text}</span>
-              </motion.li>
-            ))}
-          </ul>
+        {/* Subtext */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-5 max-w-xl text-base leading-8 text-white/55"
+        >
+          At Dwaraka’s Bawarchi, every dish is more than just food — it’s a celebration of authentic Indian flavors. From our wide range of signature biryanis to rich, carefully crafted curries, each recipe is prepared using fresh ingredients and traditional spice blends. Whether you’re dining with family or hosting a special event, we bring together taste, quality, and warm hospitality to create an experience that feels both memorable and genuine.
+        </motion.p>
 
+        {/* Divider */}
+        <div className="mt-10 h-px w-16 bg-gold/30" />
 
-        </motion.div>
+        {/* Highlights grid */}
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {highlights.map(({ Icon, text }, i) => (
+            <motion.div
+              key={text}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+              className="flex items-center gap-4 rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 backdrop-blur-sm"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10">
+                <Icon className="text-xl text-gold" />
+              </span>
+              <span className="text-sm text-white/70">{text}</span>
+            </motion.div>
+          ))}
+        </div>
 
       </div>
     </section>

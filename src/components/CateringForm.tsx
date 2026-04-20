@@ -10,7 +10,7 @@ export default function CateringForm() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.08),_transparent_22%)]" />
       <div className="relative mx-auto max-w-6xl rounded-[2.5rem] border border-white/10 bg-black/80 p-10 shadow-card backdrop-blur-xl">
         <div className="mb-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-gold/75">Catering</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-gold">Catering</p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">Premium event catering made effortless.</h2>
 
           {/* Catering intro content */}

@@ -138,7 +138,7 @@ function AccordionSection({
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="px-6 pb-2"
+              className="px-6 pb-2 max-h-[400px] overflow-y-auto overscroll-contain"
             >
               {items.map((item, i) => (
                 <ItemRow key={item.name} item={item} isLast={i === items.length - 1} />
@@ -154,7 +154,7 @@ function AccordionSection({
 // ── Veg menu ──────────────────────────────────────────────────────────────────
 function VegMenu() {
   const sections = vegMenu as { category: string; items: RawItem[] }[];
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   return (
     <motion.div
@@ -179,7 +179,7 @@ function VegMenu() {
 // ── Non-Veg menu ──────────────────────────────────────────────────────────────
 function NonVegMenu() {
   const sections = Object.entries(nonVegMenu) as [string, RawItem[]][];
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   return (
     <motion.div
@@ -348,3 +348,4 @@ export default function MenuPage() {
     </motion.div>
   );
 }
+

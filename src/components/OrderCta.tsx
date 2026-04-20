@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { HiCheckCircle } from 'react-icons/hi';
+import { MdOutlineStar } from 'react-icons/md';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface FormData {
@@ -412,7 +414,9 @@ function SuccessModal({ onClose }: { onClose: () => void }) {
         onClick={(e) => e.stopPropagation()}
         className="relative z-10 w-full max-w-sm rounded-[2rem] border border-white/10 bg-[#0d0505] p-10 text-center shadow-2xl"
       >
-        <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 text-3xl">🎉</div>
+        <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gold/20">
+          <HiCheckCircle className="text-4xl text-gold" />
+        </div>
         <h3 className="text-xl font-semibold text-white">Request Received!</h3>
         <p className="mt-3 text-sm text-white/60">We'll get back to you within 24 hours to confirm your catering booking.</p>
         <button onClick={onClose} className="mt-6 w-full rounded-full bg-gold py-3 text-sm font-semibold text-black transition hover:bg-gold/90">
@@ -446,7 +450,7 @@ export default function OrderCta({ openModalRef }: { openModalRef?: (fn: () => v
           {/* ── Header ── */}
           <div className="mb-8">
             <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
-              ⭐ Trusted by 1000+ happy guests
+              <MdOutlineStar className="text-sm" /> Trusted by 1000+ happy guests
             </span>
             <h2 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Dine with us.<br />

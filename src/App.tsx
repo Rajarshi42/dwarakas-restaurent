@@ -1,16 +1,17 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CustomCursor from './components/CustomCursor';
 import SceneHero from './components/SceneHero';
-import StorySection from './components/StorySection';
-import MenuCategories from './components/MenuCategories';
-import FoodExperience from './components/FoodExperience';
-import OrderCta from './components/OrderCta';
-import CateringForm from './components/CateringForm';
-import LocationsSection from './components/LocationsSection';
-import MenuPage from './pages/MenuPage';
+
+const StorySection    = lazy(() => import('./components/StorySection'));
+const MenuCategories  = lazy(() => import('./components/MenuCategories'));
+const FoodExperience  = lazy(() => import('./components/FoodExperience'));
+const OrderCta        = lazy(() => import('./components/OrderCta'));
+const CateringForm    = lazy(() => import('./components/CateringForm'));
+const LocationsSection = lazy(() => import('./components/LocationsSection'));
+const FranchiseSection = lazy(() => import('./components/FranchiseSection'));
+const MenuPage        = lazy(() => import('./pages/MenuPage'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,8 +48,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-page text-white">
-      <CustomCursor />
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
+<header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div>
             <span className="text-sm uppercase tracking-[0.35em] text-gold">Dwaraka's</span>
@@ -71,16 +71,19 @@ function HomePage() {
         </div>
       </header>
 
-      <main className="space-y-32 pt-24">
+      <main className="space-y-32">
         <section id="hero" data-scroll className="relative min-h-[100vh] overflow-hidden">
           <SceneHero />
         </section>
-        <StorySection />
-        <MenuCategories />
-        <FoodExperience />
-        <OrderCta openModalRef={(fn) => { openCateringModal.current = fn; }} />
-        <CateringForm />
-        <LocationsSection />
+        <Suspense fallback={null}>
+          <StorySection />
+          <MenuCategories />
+          <FoodExperience />
+          <OrderCta openModalRef={(fn) => { openCateringModal.current = fn; }} />
+          <CateringForm />
+          <LocationsSection />
+          <FranchiseSection />
+        </Suspense>
       </main>
     </div>
   );
@@ -91,7 +94,7 @@ function AnimatedRoutes() {
   return (
     <Routes location={location} key={location.pathname.split('/')[1]}>
       <Route path="/" element={<HomePage />} />
-      <Route path="/menu/:category" element={<MenuPage />} />
+      <Route path="/menu/:category" element={<Suspense fallback={null}><MenuPage /></Suspense>} />
     </Routes>
   );
 }

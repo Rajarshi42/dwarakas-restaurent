@@ -42,7 +42,7 @@ export default function MenuCategories() {
 
         {/* Section heading */}
         <div className="mb-14">
-          <p className="text-sm uppercase tracking-[0.35em] text-gold/75">Explore our menu</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-gold">Explore our menu</p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
             Crafted for every craving.
           </h2>
@@ -56,7 +56,7 @@ export default function MenuCategories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ y: -4 }}
               onClick={() => { window.scrollTo({ top: 0 }); navigate(cat.route); }}
               className="group relative cursor-pointer overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-gold/50 hover:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
               style={{ minHeight: '380px' }}
