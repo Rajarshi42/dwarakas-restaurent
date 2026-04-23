@@ -6,12 +6,12 @@ const eventTypes = ['Wedding', 'Corporate', 'Private Party', 'Festival'];
 export default function CateringForm() {
 
   return (
-    <section id="catering" data-scroll className="relative overflow-hidden px-6 py-24 sm:px-10">
+    <section id="catering" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.08),_transparent_22%)]" />
-      <div className="relative mx-auto max-w-6xl rounded-[2.5rem] border border-white/10 bg-black/80 p-10 shadow-card backdrop-blur-xl">
+      <div className="relative mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-black/80 p-6 shadow-card backdrop-blur-xl sm:rounded-[2.5rem] sm:p-10">
         <div className="mb-10">
           <p className="text-sm uppercase tracking-[0.35em] text-gold">Catering</p>
-          <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">Premium event catering made effortless.</h2>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Premium event catering made effortless.</h2>
 
           {/* Catering intro content */}
           <div className="mt-8 grid gap-6 rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:grid-cols-2">

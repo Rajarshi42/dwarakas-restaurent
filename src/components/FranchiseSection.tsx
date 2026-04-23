@@ -55,7 +55,7 @@ export default function FranchiseSection() {
   };
 
   return (
-    <section id="franchise" data-scroll className="relative overflow-hidden px-6 py-10 sm:px-10">
+    <section id="franchise" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(212,175,55,0.07),_transparent_60%)]" />
 
       <div className="relative mx-auto max-w-2xl">
@@ -68,9 +68,8 @@ export default function FranchiseSection() {
           className="mb-10 text-center"
         >
           <p className="text-sm uppercase tracking-[0.35em] text-gold">Franchise</p>
-          <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-            Be part of the<br />
-            <span className="text-gold">Franchise.</span>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Be part of the <span className="text-gold">Franchise.</span>
           </h2>
           <p className="mt-4 text-sm leading-7 text-white/50">
             Would you like to have your own Dwaraka's Bawarchi place? Be a part of the franchise and bring authentic Indian flavors to your city.
@@ -83,7 +82,7 @@ export default function FranchiseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="rounded-[2rem] border border-white/10 bg-black/60 p-8 shadow-card backdrop-blur-xl"
+          className="rounded-[2rem] border border-white/10 bg-black/60 p-6 shadow-card backdrop-blur-xl sm:p-8"
         >
           {sent ? (
             <div className="flex flex-col items-center gap-4 py-10 text-center">

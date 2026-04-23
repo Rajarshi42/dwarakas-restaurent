@@ -22,7 +22,7 @@ const VIDEO_SRC = '/videos/ourStory.mp4';
 
 export default function StorySection() {
   return (
-    <section id="story" data-scroll className="relative overflow-hidden px-6 py-24 sm:px-10">
+    <section id="story" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.08),_transparent_22%),linear-gradient(180deg,_rgba(139,0,0,0.08),transparent_40%)]" />
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-16">
@@ -33,8 +33,8 @@ export default function StorySection() {
           {/* Text */}
           <div className="flex-1">
             <p className="text-sm uppercase tracking-[0.35em] text-gold">Our story</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-              Where authentic flavors<br />meet modern dining.
+            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+              Where authentic flavors meet modern dining.
             </h2>
             <p className="mt-6 text-base leading-8 text-white/70">
               Founded with a deep passion for authentic Indian cuisine, Dwaraka's Bawarchi has been serving flavorful experiences since 2019. Our journey began with a simple vision — to bring the true taste of traditional recipes to modern dining.
@@ -60,7 +60,7 @@ export default function StorySection() {
                 loop
                 muted
                 playsInline
-                className="h-[420px] w-full object-cover lg:h-[370px]"
+                className="h-[280px] w-full object-cover sm:h-[370px] lg:h-[420px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full border border-white/15 bg-black/60 px-4 py-2 backdrop-blur-sm">

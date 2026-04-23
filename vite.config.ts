@@ -6,10 +6,8 @@ export default defineConfig({
   server: {
     host: 'localhost'
   },
-  base: '/dwarakas-restaurent/',
+  base: '/dwarakas-restaurant/',
   build: {
-    chunkSizeWarningLimit: 900,
-    outDir: 'dist',
-    emptyOutDir: true
+    chunkSizeWarningLimit: 900
   }
 });

@@ -441,7 +441,7 @@ export default function OrderCta({ openModalRef }: { openModalRef?: (fn: () => v
 
   return (
     <>
-      <section id="order" data-scroll className="relative overflow-hidden px-4 py-24 sm:px-10">
+      <section id="order" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
         {/* ambient glow */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#2a0000]/50 via-transparent to-[#0d0000]/30" />
 
@@ -452,8 +452,8 @@ export default function OrderCta({ openModalRef }: { openModalRef?: (fn: () => v
             <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
               <MdOutlineStar className="text-sm" /> Trusted by 1000+ happy guests
             </span>
-            <h2 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Dine with us.<br />
+            <h2 className="mt-5 text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+              Dine with us.{' '}
               <span className="text-gold">Celebrate with us.</span>
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/50">

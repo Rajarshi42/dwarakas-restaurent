@@ -4,8 +4,6 @@
 
 :root {
   color-scheme: dark;
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #0f0f0f;
 }

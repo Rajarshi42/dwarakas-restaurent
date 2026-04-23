@@ -10,27 +10,33 @@ const branches = [
 
 export default function LocationsSection() {
     return (
-        <section id="locations" data-scroll className="relative overflow-hidden px-6 py-24 sm:px-10">
+        <section id="locations" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.08),_transparent_30%)]" />
-            <div className="relative mx-auto max-w-7xl rounded-[2.5rem] border border-white/10 bg-black/80 p-10 shadow-card backdrop-blur-xl">
+            <div className="relative mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-black/80 p-6 shadow-card backdrop-blur-xl sm:rounded-[2.5rem] sm:p-10">
                 <div className="mb-10">
                     <p className="text-sm uppercase tracking-[0.35em] text-gold">Locations</p>
-                    <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">Find us at premium culinary destinations.</h2>
+                    <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Find us at premium culinary destinations.</h2>
                     <p className="mt-6 max-w-2xl text-base leading-8 text-white/75">
                         Check Dwaraka's Bawarachi's new locations and find out the closest option to you!
                     </p>
                 </div>
-                <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-[#0e0b08] shadow-card">
-                    <div className="absolute inset-0 bg-[url('/photos/indian-spices.jpg')] bg-cover bg-center opacity-100" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-[#0e0b08] shadow-card"
+                >
+                    <div className="absolute inset-0 bg-[url('/photos/indian-spices.jpg')] bg-cover bg-center opacity-20" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/60" />
                     <div className="relative p-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                         {branches.map((branch, index) => (
                             <motion.div
                                 key={branch.name}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                transition={{ delay: index * 0.1 }}
+                                viewport={{ once: true, amount: 0.3, margin: "0px 0px -50px 0px" }}
+                                transition={{ delay: index * 0.1, duration: 0.4 }}
                                 className="rounded-2xl border border-white/15 bg-black/30 p-5 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
                             >
                                 {/* Header row */}
@@ -62,7 +68,7 @@ export default function LocationsSection() {
                             </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -36,14 +36,14 @@ export default function MenuCategories() {
   const navigate = useNavigate();
 
   return (
-    <section id="menu" data-scroll className="relative overflow-hidden px-6 py-24 sm:px-10">
+    <section id="menu" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
       <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-[#200000] to-transparent opacity-30" />
       <div className="relative mx-auto max-w-7xl">
 
         {/* Section heading */}
         <div className="mb-14">
           <p className="text-sm uppercase tracking-[0.35em] text-gold">Explore our menu</p>
-          <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
             Crafted for every craving.
           </h2>
         </div>
@@ -59,7 +59,7 @@ export default function MenuCategories() {
               whileHover={{ y: -4 }}
               onClick={() => { window.scrollTo({ top: 0 }); navigate(cat.route); }}
               className="group relative cursor-pointer overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-gold/50 hover:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
-              style={{ minHeight: '380px' }}
+              style={{ minHeight: '300px' }}
             >
               {/* Background image */}
               <div
