@@ -8,6 +8,8 @@ export default defineConfig({
   },
   base: '/dwarakas-restaurent/',
   build: {
-    chunkSizeWarningLimit: 900
+    chunkSizeWarningLimit: 900,
+    outDir: 'dist',
+    emptyOutDir: true
   }
 });
