@@ -92,9 +92,16 @@ function HomePage() {
       <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${scrolled ? 'border-white/10 bg-black/75 backdrop-blur-xl shadow-[0_2px_24px_rgba(0,0,0,0.6)]' : 'border-transparent bg-transparent backdrop-blur-none'}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
           {/* Logo */}
-          <div className="min-w-0">
-            <span className="block text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">Dwaraka's</span>
-            <h1 className="mt-0.5 truncate text-base font-semibold sm:text-xl">Bawarchi Indian Kitchen</h1>
+          <div className="flex items-center gap-3 min-w-0">
+            <img 
+              src="/photos/Logo1.png" 
+              alt="Dwaraka's Bawarchi Indian Kitchen" 
+              className="h-12 w-auto sm:h-14 object-contain flex-shrink-0"
+            />
+            <div className="min-w-0">
+              <span className="block text-xs uppercase tracking-[0.3em] text-gold sm:text-sm">Dwaraka's</span>
+              <h1 className="mt-0.5 truncate text-base font-semibold sm:text-xl">Bawarchi Indian Kitchen</h1>
+            </div>
           </div>
 
           {/* Desktop nav */}

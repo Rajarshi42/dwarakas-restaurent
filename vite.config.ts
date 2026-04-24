@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     host: 'localhost'
   },
-  base: '/dwarakas-restaurent/',
+  base: process.env.NODE_ENV === 'production' ? '/dwarakas-restaurent/' : '/',
   build: {
     chunkSizeWarningLimit: 900
   }
