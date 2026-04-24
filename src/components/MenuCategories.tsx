@@ -6,28 +6,28 @@ const categories = [
     id: 'veg',
     label: 'Vegetarian',
     tag: 'Pure & Fresh',
-    image: '/photos/veg.jpg',
+    image: 'photos/veg.jpg',
     route: '/menu/veg',
   },
   {
     id: 'non-veg',
     label: 'Non-Veg',
     tag: 'Rich & Smoky',
-    image: '/photos/non-veg.jpg',
+    image: 'photos/non-veg.jpg',
     route: '/menu/non-veg',
   },
   {
     id: 'desserts',
     label: 'Desserts',
     tag: 'Royal Sweets',
-    image: '/photos/dessert.jpg',
+    image: 'photos/dessert.jpg',
     route: '/menu/desserts',
   },
   {
     id: 'drinks',
     label: 'Drinks',
     tag: 'Crafted Sips',
-    image: '/photos/drinks.jpg',
+    image: 'photos/drinks.jpg',
     route: '/menu/drinks',
   },
 ];
@@ -36,7 +36,7 @@ export default function MenuCategories() {
   const navigate = useNavigate();
 
   return (
-    <section id="menu" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
+    <section id="menu" data-scroll className="relative overflow-hidden px-4 py-12 sm:px-10 sm:py-20">
       <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-[#200000] to-transparent opacity-30" />
       <div className="relative mx-auto max-w-7xl">
 

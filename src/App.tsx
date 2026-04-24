@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SceneHero from './components/SceneHero';
@@ -23,10 +23,14 @@ function HomePage() {
   const isInitializing = useRef(true);
 
   useEffect(() => {
-    if (window.location.pathname !== '/') return;
+    // If the page loaded with a hash-as-path (e.g. /hero from a refresh), redirect to /#hero
+    const path = window.location.pathname;
+    if (path !== '/' && !path.startsWith('/menu')) {
+      const section = path.replace(/^\//, '');
+      history.replaceState(null, '', `/#${section}`);
+    }
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
-    history.replaceState(null, '', '/');
     setTimeout(() => { isInitializing.current = false; }, 300);
   }, []);
 
@@ -54,12 +58,12 @@ function HomePage() {
         onEnter: () => {
           if (isInitializing.current || window.location.pathname !== '/') return;
           setActiveSection(section.id);
-          history.replaceState(null, '', `#${section.id}`);
+          history.replaceState(null, '', `/${section.id === 'hero' ? '' : '#' + section.id}`);
         },
         onEnterBack: () => {
           if (isInitializing.current || window.location.pathname !== '/') return;
           setActiveSection(section.id);
-          history.replaceState(null, '', `#${section.id}`);
+          history.replaceState(null, '', `/${section.id === 'hero' ? '' : '#' + section.id}`);
         },
       });
     });
@@ -83,8 +87,12 @@ function HomePage() {
   const scrollTo = (id: string) => {
     setActiveSection(id);
     setMenuOpen(false);
-    history.replaceState(null, '', `#${id}`);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    history.replaceState(null, '', id === 'hero' ? '/' : `/#${id}`);
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navbarHeight = 80;
+    const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
   };
 
   return (
@@ -94,7 +102,7 @@ function HomePage() {
           {/* Logo */}
           <div className="flex items-center gap-3 min-w-0">
             <img 
-              src="/photos/Logo1.png" 
+              src="photos/Logo1.png" 
               alt="Dwaraka's Bawarchi Indian Kitchen" 
               className="h-12 w-auto sm:h-14 object-contain flex-shrink-0"
             />
@@ -177,10 +185,13 @@ function HomePage() {
 
 function AnimatedRoutes() {
   const location = useLocation();
+  // Use only the base pathname (ignore hash) as the route key to prevent remounts on hash changes
+  const routeKey = location.pathname === '/' ? 'home' : location.pathname.split('/')[1];
   return (
-    <Routes location={location} key={location.pathname.split('/')[1]}>
+    <Routes location={location} key={routeKey}>
       <Route path="/" element={<HomePage />} />
       <Route path="/menu/:category" element={<Suspense fallback={null}><MenuPage /></Suspense>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

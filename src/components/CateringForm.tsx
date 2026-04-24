@@ -6,7 +6,7 @@ const eventTypes = ['Wedding', 'Corporate', 'Private Party', 'Festival'];
 export default function CateringForm() {
 
   return (
-    <section id="catering" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
+    <section id="catering" data-scroll className="relative overflow-hidden px-4 py-10 sm:px-10 sm:py-18">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.08),_transparent_22%)]" />
       <div className="relative mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-black/80 p-6 shadow-card backdrop-blur-xl sm:rounded-[2.5rem] sm:p-10">
         <div className="mb-10">

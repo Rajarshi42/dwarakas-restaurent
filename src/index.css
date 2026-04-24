@@ -12,6 +12,16 @@ html, body, #root {
   min-height: 100%;
 }
 
+/* Offset anchor scroll so sections clear the fixed navbar (~80px) */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Ensure section headings are never hidden behind the fixed navbar */
+section[data-scroll] {
+  scroll-margin-top: 80px;
+}
+
 body {
   margin: 0;
   background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), transparent 35%),

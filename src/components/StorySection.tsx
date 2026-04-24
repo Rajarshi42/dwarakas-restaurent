@@ -18,11 +18,11 @@ const storyBlocks = [
   },
 ];
 
-const VIDEO_SRC = '/videos/ourStory.mp4';
+const VIDEO_SRC = 'videos/ourStory.mp4';
 
 export default function StorySection() {
   return (
-    <section id="story" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
+    <section id="story" data-scroll className="relative overflow-hidden px-4 py-12 sm:px-10 sm:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.08),_transparent_22%),linear-gradient(180deg,_rgba(139,0,0,0.08),transparent_40%)]" />
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-16">

@@ -19,7 +19,7 @@ export default function SceneHero() {
         playsInline
       >
         <source
-          src="/videos/Firefly Ultra realistic cinematic slow-motion video of chicken biryani preparation, 4K resolution, 6.mp4"
+          src="videos/Firefly Ultra realistic cinematic slow-motion video of chicken biryani preparation, 4K resolution, 6.mp4"
           type="video/mp4"
         />
       </video>

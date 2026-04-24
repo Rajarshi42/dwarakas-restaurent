@@ -11,7 +11,7 @@ const highlights = [
 
 export default function FoodExperience() {
   return (
-    <section id="food" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
+    <section id="food" data-scroll className="relative overflow-hidden px-4 py-10 sm:px-10 sm:py-18">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.07),_transparent_60%)]" />
 
       <div className="relative mx-auto max-w-4xl">

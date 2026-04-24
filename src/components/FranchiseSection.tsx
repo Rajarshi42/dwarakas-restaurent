@@ -25,7 +25,7 @@ function Field({
         {textarea ? (
           <textarea
             {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
-            rows={5}
+            rows={3}
             className={`${base} resize-none`}
           />
         ) : (
@@ -55,23 +55,23 @@ export default function FranchiseSection() {
   };
 
   return (
-    <section id="franchise" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
+    <section id="franchise" data-scroll className="relative overflow-hidden px-4 py-6 sm:px-10 sm:py-10 lg:py-14">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(212,175,55,0.07),_transparent_60%)]" />
 
-      <div className="relative mx-auto max-w-2xl">
+      <div className="relative mx-auto max-w-xl lg:max-w-2xl">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-10 text-center"
+          className="mb-6 text-center sm:mb-8"
         >
           <p className="text-sm uppercase tracking-[0.35em] text-gold">Franchise</p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">
             Be part of the <span className="text-gold">Franchise.</span>
           </h2>
-          <p className="mt-4 text-sm leading-7 text-white/50">
+          <p className="mt-3 text-sm leading-6 text-white/50">
             Would you like to have your own Dwaraka's Bawarchi place? Be a part of the franchise and bring authentic Indian flavors to your city.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export default function FranchiseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="rounded-[2rem] border border-white/10 bg-black/60 p-6 shadow-card backdrop-blur-xl sm:p-8"
+          className="rounded-[2rem] border border-white/10 bg-black/60 p-5 shadow-card backdrop-blur-xl sm:p-7"
         >
           {sent ? (
             <div className="flex flex-col items-center gap-4 py-10 text-center">
@@ -99,19 +99,19 @@ export default function FranchiseSection() {
               </button>
             </div>
           ) : (
-            <form onSubmit={submit} className="flex flex-col gap-5">
-              <div className="grid gap-4 sm:grid-cols-2">
+            <form onSubmit={submit} className="flex flex-col gap-4">
+              <div className="grid gap-3 sm:grid-cols-2">
                 <Field label="First Name" icon={HiOutlineUser} value={form.firstName} onChange={e => set('firstName', e.target.value)} placeholder="Arjun" error={errors.firstName} />
                 <Field label="Last Name" value={form.lastName} onChange={e => set('lastName', e.target.value)} placeholder="Sharma" />
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2">
                 <Field label="Email" icon={HiOutlineMail} type="email" value={form.email} onChange={e => set('email', e.target.value)} placeholder="you@example.com" error={errors.email} />
                 <Field label="Phone" icon={HiOutlinePhone} type="tel" value={form.phone} onChange={e => set('phone', e.target.value)} placeholder="9876543210" />
               </div>
               <Field label="Message" textarea value={form.message} onChange={e => set('message', e.target.value)} placeholder="Tell us about yourself and your interest in the franchise..." />
               <button
                 type="submit"
-                className="mt-2 w-full rounded-full bg-gold py-3.5 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-gold/90 active:scale-[0.98]"
+                className="mt-1 w-full rounded-full bg-gold py-3 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-gold/90 active:scale-[0.98]"
               >
                 Send Inquiry
               </button>

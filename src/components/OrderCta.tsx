@@ -441,7 +441,7 @@ export default function OrderCta({ openModalRef }: { openModalRef?: (fn: () => v
 
   return (
     <>
-      <section id="order" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
+      <section id="order" data-scroll className="relative overflow-hidden px-4 py-10 sm:px-10 sm:py-18">
         {/* ambient glow */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#2a0000]/50 via-transparent to-[#0d0000]/30" />
 

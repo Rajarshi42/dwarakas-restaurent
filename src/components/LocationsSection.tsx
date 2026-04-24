@@ -10,14 +10,14 @@ const branches = [
 
 export default function LocationsSection() {
     return (
-        <section id="locations" data-scroll className="relative overflow-hidden px-4 py-16 sm:px-10 sm:py-24">
+        <section id="locations" data-scroll className="relative overflow-hidden px-4 py-6 sm:px-10 sm:py-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.08),_transparent_30%)]" />
-            <div className="relative mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-black/80 p-6 shadow-card backdrop-blur-xl sm:rounded-[2.5rem] sm:p-10">
-                <div className="mb-10">
+            <div className="relative mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-black/80 p-5 shadow-card backdrop-blur-xl sm:rounded-[2.5rem] sm:p-8">
+                <div className="mb-6">
                     <p className="text-sm uppercase tracking-[0.35em] text-gold">Locations</p>
-                    <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Find us at premium culinary destinations.</h2>
-                    <p className="mt-6 max-w-2xl text-base leading-8 text-white/75">
-                        Check Dwaraka's Bawarachi's new locations and find out the closest option to you!
+                    <h2 className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">Find us near you.</h2>
+                    <p className="mt-3 max-w-xl text-sm leading-7 text-white/75">
+                        Check Dwaraka's Bawarchi's locations and find the closest one to you.
                     </p>
                 </div>
                 <motion.div
@@ -27,7 +27,7 @@ export default function LocationsSection() {
                     transition={{ duration: 0.3 }}
                     className="relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-[#0e0b08] shadow-card"
                 >
-                    <div className="absolute inset-0 bg-[url('/photos/indian-spices.jpg')] bg-cover bg-center opacity-20" />
+                    <div className="absolute inset-0 bg-[url('photos/indian-spices.jpg')] bg-cover bg-center opacity-20" />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/60" />
                     <div className="relative p-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                         {branches.map((branch, index) => (
