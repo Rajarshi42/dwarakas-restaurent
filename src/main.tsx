@@ -10,7 +10,7 @@ window.scrollTo(0, 0);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/dwarakas-restaurent">
       <App />
     </BrowserRouter>
   </React.StrictMode>
